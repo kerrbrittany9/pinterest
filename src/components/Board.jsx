@@ -8,6 +8,7 @@ import PinList from './PinList';
 class Board extends React.Component {
   constructor(props) {
     super(props)
+    this.handleNewPinSubmission = this.handleNewPinSubmission.bind(this);
   }
 
   handleNewPinSubmission(event) {
@@ -27,19 +28,26 @@ class Board extends React.Component {
   }
 
   render() {
+
+    var inputStyle = {
+      width: '500',
+    }
+
     return(
       <div>
+      <br/>
         <form onSubmit={this.handleNewPinSubmission}>
           <input
+            style={inputStyle}
             ref="_title"
             type="text"
             id="title"
             placeholder="Title"/>
-          <textarea
+          <textarea style={inputStyle}
             ref="_content"
             id="content"
             placeholder="your pin"/>
-          <Button bsStyle="primary" type="submit">Pin</Button>
+          <Button bsStyle="danger" type="submit">Pin</Button>
         </form>
         <PinList pinList={this.props.masterPinList}/>
       </div>
