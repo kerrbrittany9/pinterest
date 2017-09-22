@@ -41,7 +41,7 @@ class Board extends React.Component {
             placeholder="your pin"/>
           <Button bsStyle="primary" type="submit">Pin</Button>
         </form>
-        <PinList/>
+        <PinList pinList={this.props.masterPinList}/>
       </div>
     )
   }
