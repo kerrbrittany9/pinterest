@@ -37,4 +37,8 @@ Run `npm start` for a dev server. Navigate to `http://localhost:8080/`. The app 
 
 ## Technologies Used
 
-React.js, Redux, JavaScript, Babel, react-hot-loader, webpack, Node.js, CSS, HTML
+React.js, Redux, JavaScript, Babel, Jest, react-hot-loader, webpack, Node.js, CSS, HTML
+
+## Process
+
+This web app is meant to be a practice in integrating Redux into a React.js project. The first step was to put component architecture in place, which meant allowing for presentational components to show a profile and pin list. The Board Component is data source, thus holds state as a container component. This state is passed to it's children. I utilized Jest unit testing to test the add-pin function. Lastly, I implemented a route to Michelle's Pinterest page and passed state by connecting to React Redux via connect() in order to allow for Barry's posts to be evident on her page. 
