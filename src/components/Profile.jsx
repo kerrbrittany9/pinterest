@@ -6,8 +6,8 @@ function Profile() {
   var containerStyle = {
     padding: '90',
     display: 'grid',
-    gridTemplateColumns: '30% 7% 7% 40%',
-    gridGap: '5% 10% 90%'
+    gridTemplateColumns: '30% 5% 5% 50%',
+    gridGap: '5% 10%'
   }
 
   var imageStyle = {
