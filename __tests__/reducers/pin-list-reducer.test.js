@@ -11,6 +11,13 @@ describe("Pin list reducer", () => {
     repin: 0
   };
 
+  const pinInfo2 = {
+    title: 'i like popcorn',
+    content: 'ate kettle corn and watched the UN address',
+    id: 1,
+    repin: 0
+  };
+
   test('should add pin to array', () => {
     const { title, content, id, repin } = pinInfo;
     action = {
@@ -23,4 +30,14 @@ describe("Pin list reducer", () => {
     const futureState = [ pinInfo ];
     expect(pinList([], action)).toEqual([ pinInfo ]);
   });
+
+  test('should delete post', () => {
+    const { pinInfo, pinInfo2 } = currentPins;
+    action = {
+    type: c.DELETE_PIN,
+    id: 1
+  };
+  const futureState = [ pinInfo];
+  expect(pinList([pinInfo2], action)).toEqual([ pinInfo])
+  })
 });

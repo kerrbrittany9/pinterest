@@ -7,7 +7,7 @@ function Profile() {
     padding: '90',
     display: 'grid',
     gridTemplateColumns: '30% 7% 7% 40%',
-    gridGap: '5% 10% 90%',
+    gridGap: '5% 10% 90%'
   }
 
   var imageStyle = {

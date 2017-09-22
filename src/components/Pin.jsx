@@ -8,13 +8,16 @@ function Pin(props) {
       <h2>{props.pin.title}</h2>
       <p>{props.pin.content}</p>
       <h5>Repins: {props.pin.repin}</h5>
+      <button onClick={() => { props.handleDeletingPin(props.pin.id)}}>Delete</button>
     </div>
   )
 }
 
 Pin.propTypes = {
   pin: PropTypes.object,
-  pinList: PropTypes.array
+  pinList: PropTypes.array,
+  id: PropTypes.string,
+  handleDeletingPin: PropTypes.func
 }
 
 export default Pin;

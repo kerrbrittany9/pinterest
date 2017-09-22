@@ -10,8 +10,10 @@ export default (state = [], action) =>  {
           content: content,
           repin: repin
         }
-      ];
-      return newState;
+      ]
+    case 'DELETE_PIN':
+      const updatePinList = state.filter(pin => pin.id !== action.pinId);
+      return updatePinList;
       default:
         return state;
   }

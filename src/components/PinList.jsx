@@ -15,7 +15,9 @@ function PinList(props) {
       <Pin
         pin={pin}
         key={pin.id}
+        id={pin.id}
         pinList={props.pinList}
+        handleDeletingPin={props.handleDeletingPin}
         />
       )}
     </div>
@@ -23,7 +25,10 @@ function PinList(props) {
 }
 
 PinList.propTypes = {
-  pinList: PropTypes.array
+  pinList: PropTypes.array,
+  pin: PropTypes.object,
+  id: PropTypes.string,
+  handleDeletingPin: PropTypes.func
 }
 
 export default PinList;

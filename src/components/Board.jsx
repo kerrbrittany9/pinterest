@@ -9,6 +9,7 @@ class Board extends React.Component {
   constructor(props) {
     super(props)
     this.handleNewPinSubmission = this.handleNewPinSubmission.bind(this);
+    this.handleDeletingPin = this.handleDeletingPin.bind(this);
   }
 
   handleNewPinSubmission(event) {
@@ -27,8 +28,16 @@ class Board extends React.Component {
     _content.value = ""
   }
 
-  render() {
+  handleDeletingPin(pinId) {
+    const { dispatch } = this.props;
+    const action = {
+      type: c.DELETE_PIN,
+      pinId: pinId,
+    }
+    dispatch(action);
+  }
 
+  render() {
     var inputStyle = {
       width: '500',
     }
@@ -49,7 +58,10 @@ class Board extends React.Component {
             placeholder="your pin"/>
           <Button bsStyle="danger" type="submit">Pin</Button>
         </form>
-        <PinList pinList={this.props.masterPinList}/>
+        <PinList
+          pinList={this.props.masterPinList}
+          handleDeletingPin = { this.handleDeletingPin}
+          />
       </div>
     )
   }
