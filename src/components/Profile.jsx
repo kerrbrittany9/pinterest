@@ -1,4 +1,5 @@
 import React from 'react';
+import Board from './Board';
 
 function Profile() {
 
@@ -21,6 +22,7 @@ function Profile() {
       <p>Followers: 1M</p>
       <p>Following: 3</p>
       <img style={imageStyle} src="http://www.billboard.com/files/media/President-Barack-Obama-2014-billboard-650.jpg"/>
+      <Board/>
     </div>
   )
 }
