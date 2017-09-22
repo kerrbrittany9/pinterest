@@ -42,7 +42,7 @@ class Board extends React.Component {
       width: '500',
     }
 
-    return(
+    return (
       <div>
       <br/>
         <form onSubmit={this.handleNewPinSubmission}>
