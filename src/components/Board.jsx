@@ -1,6 +1,9 @@
 import React from 'react';
 import { v4 } from 'uuid';
 import c from './../constants';
+import { connect } from 'react-redux';
+import { Button } from 'react-bootstrap';
+import PinList from './PinList';
 
 class Board extends React.Component {
   constructor(props) {
@@ -12,7 +15,7 @@ class Board extends React.Component {
     const { _title, _content, _repin } = this.refs;
     const { dispatch } = this.props;
     const action = {
-      type: c.ADD_POST,
+      type: c.ADD_PIN,
       id: v4(),
       title: _title.value,
       content: _content.value,
@@ -20,7 +23,7 @@ class Board extends React.Component {
     }
     dispatch(action);
     _title.value = "",
-    _content.value = "",
+    _content.value = ""
   }
 
   render() {
@@ -38,8 +41,16 @@ class Board extends React.Component {
             placeholder="your pin"/>
           <Button bsStyle="primary" type="submit">Pin</Button>
         </form>
+        <PinList/>
       </div>
     )
   }
 }
-export default Board;
+
+const mapStateToProps = state => {
+  return {
+    masterPinList : state
+  };
+};
+
+export default connect(mapStateToProps)(Board);
