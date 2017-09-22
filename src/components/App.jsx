@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import Profile from './Profile';
 
 function App(props) {
 
@@ -11,6 +12,7 @@ var containerStyles = {
   return (
     <div style={containerStyles}>
       <Header/>
+      <Profile/>
     </div>
   );
 }
